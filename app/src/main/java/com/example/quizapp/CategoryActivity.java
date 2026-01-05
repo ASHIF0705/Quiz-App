@@ -23,7 +23,6 @@ public class CategoryActivity extends AppCompatActivity {
         btnProgramming.setOnClickListener(v -> startQuiz("programming", playerName));
     }
 
-
     private void startQuiz(String category, String playerName) {
         Intent intent = new Intent(CategoryActivity.this, QuizActivity.class);
         intent.putExtra("category", category);
