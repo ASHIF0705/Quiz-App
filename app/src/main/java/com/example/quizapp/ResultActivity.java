@@ -36,9 +36,9 @@ public class ResultActivity extends AppCompatActivity {
         } else if (percentage >= 60) {
             tvMessage.setText("Good Job! ");
         } else if (percentage >= 40) {
-            tvMessage.setText("Not Bad! Keep Trying ");
+            tvMessage.setText("Not Bad! Keep Trying... ");
         } else {
-            tvMessage.setText("Better Luck Next Time ");
+            tvMessage.setText("Better Luck Next Time! ");
         }
 
         btnPlayAgain.setOnClickListener(v -> {
