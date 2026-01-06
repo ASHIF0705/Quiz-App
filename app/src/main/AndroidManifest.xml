@@ -12,7 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.QuizApp">
 
-        <!-- Ye WelcomeActivity ko launcher bana rahe hain (app open hone pe ye pehle dikhegi) -->
         <activity
             android:name=".WelcomeActivity"
             android:exported="true">
@@ -22,7 +21,6 @@
             </intent-filter>
         </activity>
 
-        <!-- Baaki teen activities -->
         <activity
             android:name=".NameActivity"
             android:exported="false" />
@@ -35,8 +33,11 @@
             android:name=".QuizActivity"
             android:exported="false" />
 
-        <!-- Agar tune MainActivity rakhi hai project banate waqt, to usko bhi add kar sakta hai, lekin use nahi kar rahe hum -->
-        <!-- <activity android:name=".MainActivity" /> -->
+        <activity
+            android:name=".ResultActivity"
+            android:exported="false" />
+
+
 
     </application>
 

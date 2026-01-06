@@ -1,5 +1,6 @@
 package com.example.quizapp;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -49,7 +50,6 @@ public class QuizActivity extends AppCompatActivity {
 
         loadQuestion();
 
-        // Jab user koi option select karega → Next button enable
         radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
             if (checkedId != -1) {
                 answerSelected = true;
@@ -57,7 +57,6 @@ public class QuizActivity extends AppCompatActivity {
             }
         });
 
-        // Next/Submit button ka common click listener
         btnNext.setOnClickListener(v -> {
             if (!answerSelected) {
                 Toast.makeText(this, "Pehle koi option select kar!", Toast.LENGTH_SHORT).show();
@@ -84,7 +83,6 @@ public class QuizActivity extends AppCompatActivity {
 
             // Agla question ya result
             if (currentQuestion == questions.size() - 1) {
-                // Last question tha → result dikhao
                 showResult();
             } else {
                 currentQuestion++;
@@ -144,12 +142,16 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     private void showResult() {
-        if (timer != null) timer.cancel();
-        Toast.makeText(this, playerName + ", Quiz Complete!\nFinal Score: " + score + "/" + questions.size(), Toast.LENGTH_LONG).show();
-        tvQuestion.setText("🎉Quiz Over! 🎉\n" + playerName + "\nFinal Score: " + score + "/" + questions.size() + "\nCongratulations !");
-        radioGroup.setVisibility(android.view.View.GONE);
-        btnNext.setVisibility(android.view.View.GONE);
-        tvTimer.setVisibility(android.view.View.GONE);
+        if (timer != null) {
+            timer.cancel();
+        }
+
+        Intent intent = new Intent(QuizActivity.this, ResultActivity.class);
+        intent.putExtra("playerName", playerName);
+        intent.putExtra("score", score);
+        intent.putExtra("totalQuestions", questions.size());
+        startActivity(intent);
+        finish();
     }
 
     private void resetOptions() {

@@ -18,7 +18,6 @@ public class WelcomeActivity extends AppCompatActivity {
         Animation anim = AnimationUtils.loadAnimation(this, R.anim.fade_in);
         welcomeText.startAnimation(anim);
 
-        // 3 second baad name screen pe jaayega
         welcomeText.postDelayed(() -> {
             startActivity(new Intent(WelcomeActivity.this, NameActivity.class));
             finish();

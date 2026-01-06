@@ -20,7 +20,7 @@ public class NameActivity extends AppCompatActivity {
         nextBtn.setOnClickListener(v -> {
             String name = nameInput.getText().toString().trim();
             if (name.isEmpty()) {
-                Toast.makeText(this, "Name daal bhai!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Enter Name !", Toast.LENGTH_SHORT).show();
             } else {
                 Intent intent = new Intent(NameActivity.this, CategoryActivity.class);
                 intent.putExtra("playerName", name);

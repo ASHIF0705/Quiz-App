@@ -32,19 +32,19 @@ public class ResultActivity extends AppCompatActivity {
 
         // Dynamic message
         if (percentage >= 80) {
-            tvMessage.setText("Excellent! 🔥");
+            tvMessage.setText("Excellent! ");
         } else if (percentage >= 60) {
-            tvMessage.setText("Good Job! 👏");
+            tvMessage.setText("Good Job! ");
         } else if (percentage >= 40) {
-            tvMessage.setText("Not Bad! Keep Trying 💪");
+            tvMessage.setText("Not Bad! Keep Trying ");
         } else {
-            tvMessage.setText("Better Luck Next Time 😊");
+            tvMessage.setText("Better Luck Next Time ");
         }
 
         btnPlayAgain.setOnClickListener(v -> {
-            // Welcome screen pe wapas bhej do (naya quiz start)
+
             Intent intent = new Intent(ResultActivity.this, WelcomeActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
             finish();
         });

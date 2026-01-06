@@ -10,8 +10,8 @@
         android:id="@+id/welcomeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to Quiz Game!"
-        android:textSize="36sp"
+        android:text="Welcome to Quiz Game..."
+        android:textSize="35sp"
         android:textColor="#FFFFFF"
         android:textStyle="bold"/>
 
