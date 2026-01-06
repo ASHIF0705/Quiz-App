@@ -27,7 +27,7 @@
 
     </LinearLayout>
 
-    <!-- Player Name - Premium Style -->
+    <!-- Player Name Style -->
     <LinearLayout
         android:layout_width="377dp"
         android:layout_height="wrap_content"
@@ -101,7 +101,7 @@
         android:textColor="#FFD700"
         android:layout_marginBottom="20dp" />
 
-    <!-- Dynamic Message - Same Font Style as Player Name (No Card) -->
+    <!-- Dynamic Message -->
     <TextView
         android:id="@+id/tvMessage"
         android:layout_width="wrap_content"
@@ -124,7 +124,7 @@
         android:id="@+id/btnPlayAgain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Play Again"
+        android:text="🔄️ Play Again"
         android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="#0D1B2A"

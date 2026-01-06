@@ -59,7 +59,7 @@ public class QuizActivity extends AppCompatActivity {
 
         btnNext.setOnClickListener(v -> {
             if (!answerSelected) {
-                Toast.makeText(this, "Pehle koi option select kar!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Choose any option!", Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -122,7 +122,7 @@ public class QuizActivity extends AppCompatActivity {
     private void startTimer() {
         timer = new CountDownTimer(TIME_PER_QUESTION, 1000) {
             public void onTick(long millisUntilFinished) {
-                tvTimer.setText("Time: " + millisUntilFinished / 1000);
+                tvTimer.setText("⏱️: " + millisUntilFinished / 1000);
             }
 
             public void onFinish() {
