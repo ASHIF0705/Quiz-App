@@ -3,32 +3,79 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="30dp"
-    android:gravity="center">
+    android:gravity="center"
+    android:padding="40dp"
+    android:background="#0D1B2A">
 
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter Your Name"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="30dp"/>
+        android:orientation="horizontal"
+        android:layout_marginBottom="40dp">
 
-    <EditText
-        android:id="@+id/nameInput"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="42sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter Your Name"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:textColor="#FFD700"
+            android:layout_marginHorizontal="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="42sp" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Your Name...."
-        android:padding="15dp"
-        android:background="#FFFFFF"
-        android:layout_marginBottom="40dp"/>
+        android:orientation="vertical"
+        android:background="@drawable/input_card_bg"
+        android:padding="30dp"
+        android:elevation="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="What's your name?"
+            android:textSize="24sp"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp" />
+
+        <EditText
+            android:id="@+id/nameInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Your Name..."
+            android:textSize="22sp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#AAAAAA"
+            android:background="@drawable/edittext_bg"
+            android:padding="18dp"
+            android:inputType="textPersonName"
+            android:imeOptions="actionDone"
+            android:singleLine="true" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/nextBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Next"
-        android:textSize="20sp"
-        android:background="#4CAF50"
-        android:textColor="#FFFFFF"/>
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#0D1B2A"
+        android:backgroundTint="#FFD700"
+        android:layout_marginTop="50dp"
+        android:padding="18dp"
+        android:elevation="10dp" />
+
 </LinearLayout>
