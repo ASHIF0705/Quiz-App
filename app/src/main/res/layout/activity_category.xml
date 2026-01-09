@@ -3,45 +3,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#0D1B2A"
     android:padding="30dp"
     android:gravity="center">
 
+    <!-- Title -->
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Select Category"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="50dp"/>
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/category_bg"
+        android:gravity="center"
+        android:text="Choose Category"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
+    <!-- Sports Button -->
     <Button
         android:id="@+id/btnSports"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Sports"
-        android:textSize="22sp"
+        android:layout_height="70dp"
+        android:text="Sports "
+        android:textSize="26sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#0288D1"
         android:layout_marginBottom="20dp"
-        android:background="#FF9800"
-        android:textColor="#FFFFFF"/>
+        android:elevation="6dp"/>
 
+    <!-- GK Button -->
     <Button
         android:id="@+id/btnGK"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="General Knowledge"
-        android:textSize="22sp"
+        android:layout_height="70dp"
+        android:text="General Knowledge "
+        android:textSize="26sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#0288D1"
         android:layout_marginBottom="20dp"
-        android:background="#9C27B0"
-        android:textColor="#FFFFFF"/>
+        android:elevation="6dp"/>
 
+    <!-- Programming Button -->
     <Button
         android:id="@+id/btnProgramming"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Programming Languages"
-        android:textSize="22sp"
-        android:layout_marginBottom="20dp"
-        android:background="#009688"
-        android:textColor="#FFFFFF"/>
+        android:layout_height="70dp"
+        android:text="Programming "
+        android:textSize="25sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#0288D1"
+        android:elevation="6dp"/>
 
 </LinearLayout>

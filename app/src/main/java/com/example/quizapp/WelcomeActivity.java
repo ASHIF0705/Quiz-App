@@ -17,7 +17,6 @@ public class WelcomeActivity extends AppCompatActivity {
         TextView welcomeText = findViewById(R.id.welcomeText);
         Animation anim = AnimationUtils.loadAnimation(this, R.anim.fade_in);
         welcomeText.startAnimation(anim);
-
         welcomeText.postDelayed(() -> {
             startActivity(new Intent(WelcomeActivity.this, NameActivity.class));
             finish();

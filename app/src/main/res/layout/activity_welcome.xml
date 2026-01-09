@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+    android:paddingHorizontal="50dp"
     android:background="#1B263B">
 
     <TextView
@@ -11,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Welcome to Quiz Game..."
+        android:gravity="center"
         android:textSize="35sp"
         android:textColor="#FFD700"
         android:textStyle="bold"/>
