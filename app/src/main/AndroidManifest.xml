@@ -30,6 +30,10 @@
             android:exported="false" />
 
         <activity
+            android:name=".LevelActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".QuizActivity"
             android:exported="false" />
 

@@ -24,7 +24,7 @@ public class CategoryActivity extends AppCompatActivity {
     }
 
     private void startQuiz(String category, String playerName) {
-        Intent intent = new Intent(CategoryActivity.this, QuizActivity.class);
+        Intent intent = new Intent(CategoryActivity.this, LevelActivity.class);
         intent.putExtra("category", category);
         intent.putExtra("playerName", playerName);
         startActivity(intent);

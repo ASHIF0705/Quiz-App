@@ -33,8 +33,9 @@ public class QuizActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
-        String category = getIntent().getStringExtra("category");
         playerName = getIntent().getStringExtra("playerName");
+        String category   = getIntent().getStringExtra("category");
+        String level      = getIntent().getStringExtra("level");
 
         tvQuestion = findViewById(R.id.tvQuestion);
         tvTimer = findViewById(R.id.tvTimer);
@@ -46,7 +47,7 @@ public class QuizActivity extends AppCompatActivity {
         option4 = findViewById(R.id.option4);
         btnNext = findViewById(R.id.btnNext);
 
-        questions = QuestionsBank.getQuestions(category);
+        questions = QuestionsBank.getQuestions(category, level);
 
         loadQuestion();
 
@@ -109,7 +110,6 @@ public class QuizActivity extends AppCompatActivity {
         answerSelected = false;
         btnNext.setEnabled(false);
 
-        // Yahan main change: sirf last question pe "Submit", baaki sab pe "Next"
         if (currentQuestion == questions.size() - 1) {
             btnNext.setText("Submit");
         } else {
