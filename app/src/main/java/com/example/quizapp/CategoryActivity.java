@@ -28,6 +28,5 @@ public class CategoryActivity extends AppCompatActivity {
         intent.putExtra("category", category);
         intent.putExtra("playerName", playerName);
         startActivity(intent);
-        finish();
     }
 }

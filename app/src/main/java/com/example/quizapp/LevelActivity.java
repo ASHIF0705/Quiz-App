@@ -30,6 +30,5 @@ public class LevelActivity extends AppCompatActivity {
         intent.putExtra("category", category);
         intent.putExtra("level", level);
         startActivity(intent);
-        finish();
     }
 }
