@@ -10,6 +10,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class QuizActivity extends AppCompatActivity {
@@ -20,9 +22,12 @@ public class QuizActivity extends AppCompatActivity {
     private Button btnNext;
 
     private List<Question> questions;
+    private List<Integer> playerAnswers = new ArrayList<>();
     private int currentQuestion = 0;
     private int score = 0;
     private String playerName;
+    private String category;
+    private String level;
     private CountDownTimer timer;
     private boolean answerSelected = false;
 
@@ -34,8 +39,8 @@ public class QuizActivity extends AppCompatActivity {
         setContentView(R.layout.activity_quiz);
 
         playerName = getIntent().getStringExtra("playerName");
-        String category   = getIntent().getStringExtra("category");
-        String level      = getIntent().getStringExtra("level");
+        category = getIntent().getStringExtra("category");
+        level = getIntent().getStringExtra("level");
 
         tvQuestion = findViewById(R.id.tvQuestion);
         tvTimer = findViewById(R.id.tvTimer);
@@ -64,17 +69,27 @@ public class QuizActivity extends AppCompatActivity {
                 return;
             }
 
-            // Check answer
             int selectedId = radioGroup.getCheckedRadioButtonId();
-            RadioButton selected = findViewById(selectedId);
-            int selectedIndex = radioGroup.indexOfChild(selected);
+            int selectedIndex = -1;
+            if (selectedId != -1) {
+                RadioButton selected = findViewById(selectedId);
+                selectedIndex = radioGroup.indexOfChild(selected);
+            }
+            playerAnswers.add(selectedIndex);
 
+            // Check sahi/galat
             if (selectedIndex == questions.get(currentQuestion).correctAnswer) {
-                selected.setBackgroundColor(Color.GREEN);
+                if (selectedId != -1) {
+                    RadioButton selected = findViewById(selectedId);
+                    selected.setBackgroundColor(Color.GREEN);
+                }
                 score++;
                 tvScore.setText("Score: " + score);
             } else {
-                selected.setBackgroundColor(Color.RED);
+                if (selectedId != -1) {
+                    RadioButton selected = findViewById(selectedId);
+                    selected.setBackgroundColor(Color.RED);
+                }
                 getCorrectOption().setBackgroundColor(Color.GREEN);
             }
 
@@ -82,7 +97,6 @@ public class QuizActivity extends AppCompatActivity {
 
             if (timer != null) timer.cancel();
 
-            // Agla question ya result
             if (currentQuestion == questions.size() - 1) {
                 showResult();
             } else {
@@ -130,7 +144,8 @@ public class QuizActivity extends AppCompatActivity {
                 disableOptions();
                 getCorrectOption().setBackgroundColor(Color.GREEN);
 
-                // Time up pe automatic next ya result
+                playerAnswers.add(-1);
+
                 if (currentQuestion == questions.size() - 1) {
                     showResult();
                 } else {
@@ -150,6 +165,11 @@ public class QuizActivity extends AppCompatActivity {
         intent.putExtra("playerName", playerName);
         intent.putExtra("score", score);
         intent.putExtra("totalQuestions", questions.size());
+        intent.putExtra("category", category);
+        intent.putExtra("level", level);
+
+        intent.putParcelableArrayListExtra("questions", new ArrayList<>(questions));
+        intent.putIntegerArrayListExtra("playerAnswers", new ArrayList<>(playerAnswers));
 
         startActivity(intent);
         finish();

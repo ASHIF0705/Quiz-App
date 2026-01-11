@@ -7,8 +7,6 @@
     android:padding="25dp"
     android:background="#0D1B2A">
 
-    <!-- Download Icon - Top Right Corner -->
-
     <!-- Quiz Over with Confetti -->
     <ImageButton
         android:id="@+id/btnDownloadReport"

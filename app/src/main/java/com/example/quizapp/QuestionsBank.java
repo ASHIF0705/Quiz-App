@@ -1,5 +1,7 @@
 package com.example.quizapp;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -209,7 +211,7 @@ public class QuestionsBank {
     }
 }
 
-class Question {
+class Question implements Parcelable {
     String questionText;
     String[] options;
     int correctAnswer;
@@ -218,5 +220,35 @@ class Question {
         this.questionText = questionText;
         this.options = options;
         this.correctAnswer = correctAnswer;
+    }
+
+    protected Question(Parcel in) {
+        questionText = in.readString();
+        options = in.createStringArray();
+        correctAnswer = in.readInt();
+    }
+
+    public static final Creator<Question> CREATOR = new Creator<Question>() {
+        @Override
+        public Question createFromParcel(Parcel in) {
+            return new Question(in);
+        }
+
+        @Override
+        public Question[] newArray(int size) {
+            return new Question[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(questionText);
+        dest.writeStringArray(options);
+        dest.writeInt(correctAnswer);
     }
 }
