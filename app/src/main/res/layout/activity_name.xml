@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginBottom="40dp">
+        android:layout_marginBottom="20dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -22,9 +22,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Enter Your Name"
-            android:textSize="36sp"
+            android:textSize="25sp"
             android:textStyle="bold"
-            android:textColor="#FFD700"
+            android:textColor="#FFFFFF"
             android:layout_marginHorizontal="16dp" />
 
         <TextView
@@ -68,9 +68,9 @@
     <Button
         android:id="@+id/nextBtn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Next"
-        android:textSize="24sp"
+        android:layout_height="70dp"
+        android:text="Next "
+        android:textSize="22sp"
         android:textStyle="bold"
         android:textColor="#0D1B2A"
         android:backgroundTint="#FFD700"
