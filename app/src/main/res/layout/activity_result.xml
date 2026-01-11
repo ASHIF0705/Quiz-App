@@ -7,7 +7,25 @@
     android:padding="25dp"
     android:background="#0D1B2A">
 
+    <!-- Download Icon - Top Right Corner -->
+
     <!-- Quiz Over with Confetti -->
+    <ImageButton
+        android:id="@+id/btnDownloadReport"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/ic_download_circle"
+        android:backgroundTint="#FFD700"
+        android:contentDescription="Download Report"
+        android:elevation="12dp"
+        android:padding="12dp"
+        android:layout_gravity="top|end"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_download" />
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -29,7 +47,7 @@
 
     <!-- Player Name Style -->
     <LinearLayout
-        android:layout_width="343dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
         android:background="@drawable/player_name_bg"
@@ -70,9 +88,9 @@
 
     <!-- Score Circle (Only Score inside) -->
     <RelativeLayout
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginBottom="30dp">
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="10dp">
 
         <View
             android:layout_width="match_parent"
@@ -84,7 +102,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="12/15"
-            android:textSize="50sp"
+            android:textSize="40sp"
             android:textStyle="bold"
             android:textColor="#FFD700"
             android:layout_centerInParent="true" />
@@ -96,10 +114,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="80%"
-        android:textSize="48sp"
+        android:textSize="40sp"
         android:textStyle="bold"
         android:textColor="#FFD700"
-        android:layout_marginBottom="20dp" />
+        android:layout_marginBottom="10dp" />
 
     <!-- Dynamic Message -->
     <TextView
@@ -115,22 +133,22 @@
         android:shadowDy="0"
         android:shadowRadius="12"
         android:letterSpacing="0.05"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="30dp"
         android:gravity="center" />
 
     <!-- Play Again Button -->
     <Button
         android:id="@+id/btnPlayAgain"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:text="🔄️ Play Again"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="#0D1B2A"
         android:backgroundTint="#FFD700"
-        android:padding="18dp"
         android:elevation="10dp"
-        android:layout_marginHorizontal="20dp" />
+        android:layout_marginHorizontal="40dp" />
+
+
 
 </LinearLayout>

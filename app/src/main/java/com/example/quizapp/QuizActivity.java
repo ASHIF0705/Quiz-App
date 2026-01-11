@@ -150,6 +150,7 @@ public class QuizActivity extends AppCompatActivity {
         intent.putExtra("playerName", playerName);
         intent.putExtra("score", score);
         intent.putExtra("totalQuestions", questions.size());
+
         startActivity(intent);
         finish();
     }
