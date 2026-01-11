@@ -31,8 +31,6 @@ public class QuizActivity extends AppCompatActivity {
     private CountDownTimer timer;
     private boolean answerSelected = false;
 
-    private static final int TIME_PER_QUESTION = 15000; // 15 seconds
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +51,8 @@ public class QuizActivity extends AppCompatActivity {
         btnNext = findViewById(R.id.btnNext);
 
         questions = QuestionsBank.getQuestions(category, level);
+
+        int timePerQuestion = "challenge".equals(level) ? 30000 : 15000;
 
         loadQuestion();
 
@@ -77,7 +77,6 @@ public class QuizActivity extends AppCompatActivity {
             }
             playerAnswers.add(selectedIndex);
 
-            // Check sahi/galat
             if (selectedIndex == questions.get(currentQuestion).correctAnswer) {
                 if (selectedId != -1) {
                     RadioButton selected = findViewById(selectedId);
@@ -134,7 +133,9 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     private void startTimer() {
-        timer = new CountDownTimer(TIME_PER_QUESTION, 1000) {
+        int timePerQuestion = "challenge".equals(level) ? 30000 : 15000;
+
+        timer = new CountDownTimer(timePerQuestion, 1000) {
             public void onTick(long millisUntilFinished) {
                 tvTimer.setText("⏱️: " + millisUntilFinished / 1000);
             }
