@@ -1,57 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#0D1B2A"
+    android:gravity="center"
     android:padding="30dp"
-    android:gravity="center">
+    android:background="#0D1B2A">
 
     <!-- Title -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginBottom="60dp"
-        android:background="@drawable/category_bg"
         android:gravity="center"
         android:text="Choose Category"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:background="@drawable/category_bg"/>
 
-    <!-- Sports Button -->
-    <Button
+    <!-- Sports -->
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSports"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:text="Sports "
+        android:layout_marginBottom="20dp"
+        android:text="Sports"
         android:textSize="26sp"
         android:textColor="#FFFFFF"
-        android:backgroundTint="#0288D1"
-        android:layout_marginBottom="20dp"
-        android:elevation="6dp"/>
+        app:backgroundTint="#0288D1"
+        app:elevation="6dp"
+        app:cornerRadius="12dp"/>
 
-    <!-- GK Button -->
-    <Button
+    <!-- General Knowledge -->
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnGK"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:text="General Knowledge "
+        android:layout_marginBottom="20dp"
+        android:text="General Knowledge"
         android:textSize="26sp"
         android:textColor="#FFFFFF"
-        android:backgroundTint="#0288D1"
-        android:layout_marginBottom="20dp"
-        android:elevation="6dp"/>
+        app:backgroundTint="#0288D1"
+        app:elevation="6dp"
+        app:cornerRadius="12dp"/>
 
-    <!-- Programming Button -->
-    <Button
+    <!-- Programming -->
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnProgramming"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:text="Programming "
+        android:text="Programming"
         android:textSize="25sp"
         android:textColor="#FFFFFF"
-        android:backgroundTint="#0288D1"
-        android:elevation="6dp"/>
+        app:backgroundTint="#0288D1"
+        app:elevation="6dp"
+        app:cornerRadius="12dp"/>
 
 </LinearLayout>
