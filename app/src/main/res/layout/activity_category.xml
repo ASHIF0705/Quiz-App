@@ -8,7 +8,7 @@
     android:padding="30dp"
     android:background="#0D1B2A">
 
-    <!-- Title -->
+    
     <TextView
         android:layout_width="match_parent"
         android:layout_height="100dp"
@@ -46,7 +46,7 @@
         app:elevation="6dp"
         app:cornerRadius="12dp"/>
 
-    <!-- Programming -->
+    
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnProgramming"
         android:layout_width="match_parent"
