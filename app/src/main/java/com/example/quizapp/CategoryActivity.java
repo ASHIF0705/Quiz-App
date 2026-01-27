@@ -2,29 +2,56 @@ package com.example.quizapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-public class CategoryActivity extends AppCompatActivity {
+public class CategoryActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private String playerName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
 
-        String playerName = getIntent().getStringExtra("playerName");
+        playerName = getIntent().getStringExtra("playerName");
 
-        Button btnSports = findViewById(R.id.btnSports);
-        Button btnGK = findViewById(R.id.btnGK);
-        Button btnProgramming = findViewById(R.id.btnProgramming);
-
-        btnSports.setOnClickListener(v -> startQuiz("sports", playerName));
-        btnGK.setOnClickListener(v -> startQuiz("gk", playerName));
-        btnProgramming.setOnClickListener(v -> startQuiz("programming", playerName));
+        initButtons();
     }
 
-    private void startQuiz(String category, String playerName) {
-        Intent intent = new Intent(CategoryActivity.this, LevelActivity.class);
+    private void initButtons() {
+        int[] buttonIds = {
+                R.id.btnSports,
+                R.id.btnGK,
+                R.id.btnProgramming
+        };
+
+        for (int id : buttonIds) {
+            Button button = findViewById(id);
+            button.setOnClickListener(this);
+        }
+    }
+
+    @Override
+    public void onClick(View view) {
+        String category = "";
+
+        int id = view.getId();
+        if (id == R.id.btnSports) {
+            category = "sports";
+        } else if (id == R.id.btnGK) {
+            category = "gk";
+        } else if (id == R.id.btnProgramming) {
+            category = "programming";
+        }
+
+        startQuiz(category);
+    }
+
+    private void startQuiz(String category) {
+        Intent intent = new Intent(this, LevelActivity.class);
         intent.putExtra("category", category);
         intent.putExtra("playerName", playerName);
         startActivity(intent);
